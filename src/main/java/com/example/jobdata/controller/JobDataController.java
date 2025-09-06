@@ -23,6 +23,7 @@ public class JobDataController {
             @RequestParam(required = false, name = "gender") String gender,
             @RequestParam(required = false, name = "salary[gte]") Long salaryGte,
             @RequestParam(required = false, name = "salary[lte]") Long salaryLte,
+            @RequestParam(required = false, name = "salary[eq]") Long salaryEq,
             @RequestParam(required = false) String fields,
             @RequestParam(required = false) String sort,
             @RequestParam(required = false, defaultValue = "ASC") String sort_type
@@ -31,7 +32,7 @@ public class JobDataController {
         if (fields != null && !fields.isEmpty()) {
             fieldList = Arrays.asList(fields.split(","));
         }
-        List<JobData> jobs = service.getJobDataList(jobTitle, gender, salaryGte, salaryLte, fieldList, sort, sort_type);
+        List<JobData> jobs = service.getJobDataList(jobTitle, gender, salaryGte, salaryLte, salaryEq, fieldList, sort, sort_type);
 
         Map<String, Object> response = new HashMap<>();
         response.put("count", jobs.size());

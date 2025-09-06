@@ -21,6 +21,7 @@ public class JobDataService {
             String gender,
             Long salaryGte,
             Long salaryLte,
+            Long salaryEq,
             List<String> fields,
             String sort,
             String sortType
@@ -37,13 +38,20 @@ public class JobDataService {
             stream = stream.filter(j -> j.getGender() != null &&
                     j.getGender().equalsIgnoreCase(gender));
         }
-        if (salaryGte != null) {
+
+        if (salaryEq !=null) {
             stream = stream.filter(j -> j.getSalary() != null &&
-                    j.getSalary() >= salaryGte);
+                    Objects.equals(j.getSalary(), salaryEq));
         }
-        if (salaryLte != null) {
-            stream = stream.filter(j -> j.getSalary() != null &&
-                    j.getSalary() <= salaryLte);
+        else {
+            if (salaryGte != null) {
+                stream = stream.filter(j -> j.getSalary() != null &&
+                        j.getSalary() >= salaryGte);
+            }
+            if (salaryLte != null) {
+                stream = stream.filter(j -> j.getSalary() != null &&
+                        j.getSalary() <= salaryLte);
+            }
         }
 
         // Sorting
