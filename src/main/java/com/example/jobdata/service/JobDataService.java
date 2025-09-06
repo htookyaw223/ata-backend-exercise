@@ -16,7 +16,7 @@ public class JobDataService {
         this.loader = loader;
     }
 
-    public List<JobData> queryJobs(
+    public List<JobData> getJobDataList(
             String jobTitle,
             String gender,
             Long salaryGte,

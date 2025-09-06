@@ -31,7 +31,7 @@ public class JobDataController {
         if (fields != null && !fields.isEmpty()) {
             fieldList = Arrays.asList(fields.split(","));
         }
-        List<JobData> jobs = service.queryJobs(jobTitle, gender, salaryGte, salaryLte, fieldList, sort, sort_type);
+        List<JobData> jobs = service.getJobDataList(jobTitle, gender, salaryGte, salaryLte, fieldList, sort, sort_type);
 
         Map<String, Object> response = new HashMap<>();
         response.put("count", jobs.size());
