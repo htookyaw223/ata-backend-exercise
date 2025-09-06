@@ -1,7 +1,7 @@
 package com.example.jobdata.model;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.util.List;
@@ -9,40 +9,40 @@ import java.util.List;
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class JobData {
-    @JsonProperty("Timestamp")
+    @JsonAlias("Timestamp")
     private String timestamp;
 
-    @JsonProperty("Employer")
+    @JsonAlias("employer")
     private String employer;
 
-    @JsonProperty("Location")
+    @JsonAlias("Location")
     private String location;
 
-    @JsonProperty("Job Title")
+    @JsonAlias("Job Title")
     private String jobTitle;
 
-    @JsonProperty("Years at Employer")
+    @JsonAlias("Years at Employer")
     private String yearsAtEmployer;
 
-    @JsonProperty("Years of Experience")
+    @JsonAlias("Years of Experience")
     private String yearsOfExperience;
 
-    @JsonProperty("Salary")
+    @JsonAlias("Salary")
     private String salary;
 
-    @JsonProperty("Signing Bonus")
+    @JsonAlias("Signing Bonus")
     private String signingBonus;
 
-    @JsonProperty("Annual Bonus")
+    @JsonAlias("Annual Bonus")
     private String annualBonus;
 
-    @JsonProperty("Annual Stock Value/Bonus")
+    @JsonAlias("Annual Stock Value/Bonus")
     private String stockBonus;
 
-    @JsonProperty("Gender")
+    @JsonAlias("Gender")
     private String gender;
 
-    @JsonProperty("Additional Comments")
+    @JsonAlias("Additional Comments")
     private String comments;
 
     public Long getSalary() {
