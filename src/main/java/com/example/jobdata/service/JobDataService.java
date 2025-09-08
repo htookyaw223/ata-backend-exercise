@@ -32,11 +32,11 @@ public class JobDataService {
         // Filtering
         if (jobTitle != null) {
             stream = stream.filter(j -> j.getJobTitle() != null &&
-                    j.getJobTitle().equalsIgnoreCase(jobTitle));
+                    j.getJobTitle().equalsIgnoreCase(jobTitle.trim()));
         }
         if (gender != null) {
             stream = stream.filter(j -> j.getGender() != null &&
-                    j.getGender().equalsIgnoreCase(gender));
+                    j.getGender().equalsIgnoreCase(gender.trim()));
         }
 
         if (salaryEq !=null) {

@@ -12,7 +12,7 @@ public class JobData {
     @JsonAlias("Timestamp")
     private String timestamp;
 
-    @JsonAlias("employer")
+    @JsonAlias("Employer")
     private String employer;
 
     @JsonAlias("Location")

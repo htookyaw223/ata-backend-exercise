@@ -30,7 +30,10 @@ public class JobDataController {
     ) {
         List<String> fieldList = null;
         if (fields != null && !fields.isEmpty()) {
-            fieldList = Arrays.asList(fields.split(","));
+            fieldList = Arrays.stream(fields.split(","))
+                    .map(String::trim)
+                    .filter(s -> !s.isEmpty())
+                    .toList();
         }
         List<JobData> jobs = service.getJobDataList(jobTitle, gender, salaryGte, salaryLte, salaryEq, fieldList, sort, sort_type);
 
