@@ -70,6 +70,10 @@ public class JobDataService {
                     comparator = Comparator.comparing(JobData::getGender,
                             Comparator.nullsLast(String::compareToIgnoreCase));
                     break;
+                case "timestamp":
+                    comparator = Comparator.comparing(JobData::getTimestamp,
+                            Comparator.nullsLast(String::compareToIgnoreCase));
+                    break;
                 default:
                     comparator = Comparator.comparing(JobData::getEmployer,
                             Comparator.nullsLast(String::compareToIgnoreCase));
